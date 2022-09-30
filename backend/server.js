@@ -12,6 +12,8 @@ app.use((req, res, next) => {
   next();
 });
 app.use("/api/workouts", workoutRoutes);
+//check req body and bind with req
+app.use(express.json());
 //routes
 app.get("/", (req, res) => {
   res.json({ msg: "Welcome Node" });

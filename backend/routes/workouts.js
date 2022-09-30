@@ -13,7 +13,7 @@ router.post("/", (req, res) => {
 router.delete("/:id", (req, res) => {
   res.json({ msg: "delete one Workouts" });
 });
-router.patch("/", (req, res) => {
+router.patch("/:id", (req, res) => {
   res.json({ msg: "update one Workouts" });
 });
 module.exports = router;
