@@ -2,6 +2,8 @@
 const express = require("express");
 //require dotenv config
 require("dotenv").config();
+//require workout routes
+const workoutRoutes = require("./routes/workouts");
 //initialize express app
 const app = express();
 //middleware
@@ -9,6 +11,7 @@ app.use((req, res, next) => {
   console.log(req.path, req.method);
   next();
 });
+app.use("/api/workouts", workoutRoutes);
 //routes
 app.get("/", (req, res) => {
   res.json({ msg: "Welcome Node" });
